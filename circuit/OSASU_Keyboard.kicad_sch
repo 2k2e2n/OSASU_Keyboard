@@ -1307,6 +1307,189 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:LED"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LED"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Light emitting diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "LED diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "LED_0_1"
+				(polyline
+					(pts
+						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LED_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -3262,7 +3445,7 @@
 	)
 	(rectangle
 		(start 254 91.44)
-		(end 281.94 163.83)
+		(end 281.94 142.24)
 		(stroke
 			(width 0.127)
 			(type solid)
@@ -3349,6 +3532,17 @@
 		)
 		(uuid "47b5d7b4-20b6-4f45-9b57-659532db5296")
 	)
+	(text "Slave"
+		(exclude_from_sim no)
+		(at 237.49 77.47 0)
+		(effects
+			(font
+				(face "ＭＳ Ｐゴシック")
+				(size 5.08 5.08)
+			)
+		)
+		(uuid "53deca2a-e1d1-4744-9100-43f4702d9ac9")
+	)
 	(text "Connector"
 		(exclude_from_sim no)
 		(at 15.24 145.796 0)
@@ -3373,7 +3567,7 @@
 		)
 		(uuid "aa70cdcb-4408-49dc-a919-18b821dc988e")
 	)
-	(text "SW"
+	(text "SW&LED"
 		(exclude_from_sim no)
 		(at 253.492 88.9 0)
 		(effects
@@ -3454,6 +3648,27 @@
 		)
 		(uuid "d352b708-27ad-4b77-91db-1fb4c52eef61")
 	)
+	(text_box "1.27mm 5pin"
+		(exclude_from_sim no)
+		(at 143.51 182.88 0)
+		(size 27.94 8.89)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "f3c93a6a-d612-466f-ac37-9beb77a60e82")
+	)
 	(junction
 		(at 53.34 114.3)
 		(diameter 0)
@@ -3473,16 +3688,16 @@
 		(uuid "2f06a14f-87d9-474a-9a92-04a42696ebe6")
 	)
 	(junction
+		(at 118.11 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8092184c-ac0a-4ad5-8109-ce20bf663d38")
+	)
+	(junction
 		(at 44.45 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "82c0e0be-a7dc-4f87-9749-0da57be67e49")
-	)
-	(junction
-		(at 115.57 168.91)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a0891aca-6de7-425f-aa75-f38e41e1ff41")
 	)
 	(junction
 		(at 115.57 171.45)
@@ -3497,10 +3712,10 @@
 		(uuid "ae85fca4-e21f-48ab-8fe8-03fe85da86e5")
 	)
 	(junction
-		(at 115.57 166.37)
+		(at 118.11 168.91)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "bea5942e-cde5-4a66-9827-eeaeb5b8cbf3")
+		(uuid "ea66f6e7-04a2-4a78-a728-d5c3016ff293")
 	)
 	(no_connect
 		(at 63.5 129.54)
@@ -3547,12 +3762,12 @@
 		(uuid "63791e40-b8b7-402c-b05c-a60a37cf8e2e")
 	)
 	(no_connect
-		(at 226.06 128.27)
-		(uuid "711e3ba7-cb23-40db-a441-5f25a1ede12f")
-	)
-	(no_connect
 		(at 144.78 129.54)
 		(uuid "7257bae1-04ba-4ae6-bddc-560035ebdc6a")
+	)
+	(no_connect
+		(at 226.06 120.65)
+		(uuid "8116679f-c60e-48e8-9380-9393f10ce39f")
 	)
 	(no_connect
 		(at 205.74 123.19)
@@ -3569,6 +3784,10 @@
 	(no_connect
 		(at 205.74 115.57)
 		(uuid "a60b90ea-b556-4f20-823f-d80c6da11738")
+	)
+	(no_connect
+		(at 226.06 118.11)
+		(uuid "c2340f87-b843-4415-9a5e-d3f6e84b72c2")
 	)
 	(no_connect
 		(at 63.5 106.68)
@@ -3620,6 +3839,16 @@
 	)
 	(wire
 		(pts
+			(xy 232.41 128.27) (xy 226.06 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0cfd6fb9-9144-4aac-bab1-7a3b2a70cece")
+	)
+	(wire
+		(pts
 			(xy 91.44 59.69) (xy 113.03 59.69)
 		)
 		(stroke
@@ -3660,17 +3889,7 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 118.11) (xy 226.06 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1bc20a7f-b7df-46bb-a376-ab1e271393d9")
-	)
-	(wire
-		(pts
-			(xy 100.33 168.91) (xy 115.57 168.91)
+			(xy 100.33 168.91) (xy 118.11 168.91)
 		)
 		(stroke
 			(width 0)
@@ -3718,6 +3937,17 @@
 		)
 		(uuid "26956c12-1919-4a11-8e06-de438d29c2b6")
 	)
+	(polyline
+		(pts
+			(xy 92.71 138.43) (xy 92.71 196.85)
+		)
+		(stroke
+			(width 0.254)
+			(type dot)
+			(color 0 100 50 1)
+		)
+		(uuid "282833d5-dc64-456b-9a64-dd46cb497e0a")
+	)
 	(wire
 		(pts
 			(xy 53.34 114.3) (xy 63.5 114.3)
@@ -3760,16 +3990,6 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 168.91) (xy 133.35 168.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "335bc291-31c0-43e3-87e5-edccd1375c67")
-	)
-	(wire
-		(pts
 			(xy 168.91 119.38) (xy 144.78 119.38)
 		)
 		(stroke
@@ -3777,6 +3997,17 @@
 			(type default)
 		)
 		(uuid "36325a2f-d560-4fcf-8177-72578bc5a97c")
+	)
+	(polyline
+		(pts
+			(xy 92.71 138.43) (xy 194.31 138.43)
+		)
+		(stroke
+			(width 0.254)
+			(type dot)
+			(color 0 100 50 1)
+		)
+		(uuid "36444af8-c192-45c0-9b2f-c3ab47c70d51")
 	)
 	(wire
 		(pts
@@ -3850,6 +4081,16 @@
 	)
 	(wire
 		(pts
+			(xy 256.54 118.11) (xy 270.51 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55e48b06-3d12-4c52-8a76-3955a0a481a5")
+	)
+	(wire
+		(pts
 			(xy 50.8 49.53) (xy 50.8 54.61)
 		)
 		(stroke
@@ -3857,16 +4098,6 @@
 			(type default)
 		)
 		(uuid "60398f35-cdf3-4d8a-8bce-ff8f558c08ab")
-	)
-	(wire
-		(pts
-			(xy 115.57 166.37) (xy 133.35 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "67509206-0fd4-4856-aeab-ab5792f42f41")
 	)
 	(wire
 		(pts
@@ -3890,16 +4121,6 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 111.76) (xy 63.5 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "77dd6f5a-6768-4f54-b9c9-32a3a054e90d")
-	)
-	(wire
-		(pts
 			(xy 242.57 113.03) (xy 226.06 113.03)
 		)
 		(stroke
@@ -3917,6 +4138,16 @@
 			(type default)
 		)
 		(uuid "7b1435a3-ec34-4e31-95e0-645ba3921533")
+	)
+	(wire
+		(pts
+			(xy 118.11 166.37) (xy 133.35 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f66ccc4-fdc6-46f3-a8a9-77ca425d3a3b")
 	)
 	(wire
 		(pts
@@ -3950,16 +4181,6 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 120.65) (xy 226.06 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "887e5000-1064-40b9-be72-436e1b116820")
-	)
-	(wire
-		(pts
 			(xy 45.72 46.99) (xy 48.26 46.99)
 		)
 		(stroke
@@ -3978,6 +4199,17 @@
 		)
 		(uuid "8bef622f-3de3-4f12-947b-2e57e376f934")
 	)
+	(polyline
+		(pts
+			(xy 194.31 81.28) (xy 284.48 81.28)
+		)
+		(stroke
+			(width 0.254)
+			(type dot)
+			(color 0 100 50 1)
+		)
+		(uuid "8dc62786-a48a-45d3-8b72-6d50ffbf0ee7")
+	)
 	(wire
 		(pts
 			(xy 100.33 173.99) (xy 114.3 173.99)
@@ -3990,7 +4222,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 166.37) (xy 115.57 166.37)
+			(xy 100.33 166.37) (xy 118.11 166.37)
 		)
 		(stroke
 			(width 0)
@@ -4007,6 +4239,27 @@
 			(type default)
 		)
 		(uuid "9a063aff-ac26-4773-9685-c22e15f63bdd")
+	)
+	(polyline
+		(pts
+			(xy 194.31 81.28) (xy 194.31 139.7)
+		)
+		(stroke
+			(width 0.254)
+			(type dot)
+			(color 0 100 50 1)
+		)
+		(uuid "9bdd63cb-6007-40db-9302-a0d4896118fa")
+	)
+	(wire
+		(pts
+			(xy 118.11 168.91) (xy 133.35 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0860329-cce7-4c38-b1f5-5fa02cc2581e")
 	)
 	(wire
 		(pts
@@ -4090,6 +4343,16 @@
 	)
 	(wire
 		(pts
+			(xy 62.23 111.76) (xy 63.5 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7308987-3b7c-42e5-8178-5502be968c9f")
+	)
+	(wire
+		(pts
 			(xy 44.45 109.22) (xy 44.45 116.84)
 		)
 		(stroke
@@ -4107,16 +4370,6 @@
 			(type default)
 		)
 		(uuid "b8667ad1-20b4-4135-8fda-56f2b0c796ce")
-	)
-	(wire
-		(pts
-			(xy 256.54 123.19) (xy 260.35 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "be8e180d-8e94-4bc9-a53a-3380b72093fe")
 	)
 	(wire
 		(pts
@@ -4150,7 +4403,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 96.52) (xy 60.96 111.76)
+			(xy 60.96 96.52) (xy 60.96 110.49)
 		)
 		(stroke
 			(width 0)
@@ -4190,13 +4443,13 @@
 	)
 	(wire
 		(pts
-			(xy 256.54 138.43) (xy 260.35 138.43)
+			(xy 62.23 111.76) (xy 60.96 110.49)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e1ee8b58-64d9-4caa-a853-5fef37d3f155")
+		(uuid "e2472c1f-41c3-4f3e-9a19-17b865945204")
 	)
 	(wire
 		(pts
@@ -4336,26 +4589,6 @@
 		)
 		(uuid "52125e5b-b83e-40e1-acbb-6bf4e3921df2")
 	)
-	(label "SW2"
-		(at 256.54 123.19 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "56635628-70a3-4fd8-b9ba-2b5a769027c0")
-	)
-	(label "SW3"
-		(at 256.54 138.43 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "679b5e19-cca7-42fc-bcdc-31598a7c96ba")
-	)
 	(label "D+_{(USB)} = UDP_{(CH552)}"
 		(at 74.93 58.42 180)
 		(effects
@@ -4427,16 +4660,6 @@
 		)
 		(uuid "a32e4b01-5fdd-4999-ba53-34c7dad791d4")
 	)
-	(label "SW2"
-		(at 232.41 118.11 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "a3a8da30-bdbe-4ed9-b0bd-3a8bffa8adac")
-	)
 	(label "Adress_{(Sink)}⇒ "
 		(at 120.65 176.53 0)
 		(effects
@@ -4447,16 +4670,6 @@
 			(justify left bottom)
 		)
 		(uuid "a7943674-0a21-40cd-9f65-84fe86520516")
-	)
-	(label "SW3"
-		(at 232.41 120.65 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "a840bd4c-f348-49f3-828d-8c714095ca25")
 	)
 	(label "SCL_{(CH552T)} = SCL_{(CH32V003)}"
 		(at 16.51 116.84 0)
@@ -4479,6 +4692,28 @@
 			(justify right bottom)
 		)
 		(uuid "db0113c4-df0a-4e8c-987b-265356486776")
+	)
+	(label "LED⇒ "
+		(at 256.54 118.11 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 0 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "dce0f55e-c3bc-4b67-8059-10d05bfb7b3a")
+	)
+	(label "LED⇒ "
+		(at 232.41 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 0 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "dd8da4f7-9016-4c4d-8f5b-45221f69b58c")
 	)
 	(label "⇒Adress_{(Slave)}"
 		(at 114.3 176.53 180)
@@ -4586,7 +4821,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "15026bad-6cee-4020-a010-e7460beb437b")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR023"
 			(at 231.14 146.05 0)
 			(effects
 				(font
@@ -4636,7 +4871,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR017")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -4652,7 +4887,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1a523db8-c2c5-4df1-bdb9-a423bea65be5")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR024"
 			(at 231.14 156.21 0)
 			(effects
 				(font
@@ -4702,7 +4937,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR018")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -4819,7 +5054,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "254d5ae9-008f-491a-af2c-02b17e0ce949")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR019"
 			(at 270.51 114.3 0)
 			(effects
 				(font
@@ -4869,7 +5104,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR024")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -5025,7 +5260,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2c7a504e-5e1b-4f9b-a0bd-382863e425db")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR05"
 			(at 198.12 38.1 0)
 			(effects
 				(font
@@ -5075,7 +5310,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR030")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -5091,7 +5326,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2c8be348-aa3f-4706-8792-160f8ce0759a")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR020"
 			(at 148.59 113.03 0)
 			(effects
 				(font
@@ -5141,7 +5376,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR013")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -5157,7 +5392,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2f9c9c87-f115-47cd-bc60-d2e5af58ec46")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR07"
 			(at 114.3 40.64 0)
 			(effects
 				(font
@@ -5207,7 +5442,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR06")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -5354,72 +5589,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PWR:GND_Slave")
-		(at 270.51 138.43 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "37d54d6f-b31d-47ff-a928-42ca309256a0")
-		(property "Reference" "#PWR027"
-			(at 270.51 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND_{Slave}"
-			(at 270.51 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 270.51 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 270.51 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 270.51 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cfac7017-1aa9-4044-bfa8-2e361af6b425")
-		)
-		(instances
-			(project "OSASU_Keyboard"
-				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR027")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 54.61 43.18 0)
 		(unit 1)
@@ -5491,15 +5660,15 @@
 	)
 	(symbol
 		(lib_id "PWR:+5V_Sleve")
-		(at 115.57 166.37 0)
+		(at 118.11 166.37 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "3d314321-ceb4-4e3b-a89c-6fa4a391de99")
-		(property "Reference" "#PWR021"
-			(at 115.57 170.18 0)
+		(property "Reference" "#PWR027"
+			(at 118.11 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5508,7 +5677,7 @@
 			)
 		)
 		(property "Value" "+5V_{Slave}"
-			(at 120.396 165.1 0)
+			(at 122.936 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5516,7 +5685,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 115.57 166.37 0)
+			(at 118.11 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5525,7 +5694,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 166.37 0)
+			(at 118.11 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5534,7 +5703,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 115.57 166.116 0)
+			(at 118.11 166.116 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5548,7 +5717,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR021")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -5685,72 +5854,6 @@
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
 					(reference "#PWR012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PWR:GND_Slave")
-		(at 270.51 123.19 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4a715de0-dd09-4158-8b7c-abd34a3c98ff")
-		(property "Reference" "#PWR025"
-			(at 270.51 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND_{Slave}"
-			(at 270.51 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 270.51 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 270.51 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 270.51 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4ef989ad-eaf1-4654-baaa-575014b4d57f")
-		)
-		(instances
-			(project "OSASU_Keyboard"
-				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -5959,7 +6062,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4ee5f228-cfe4-4be1-9332-182f58798a93")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR03"
 			(at 176.53 35.56 0)
 			(effects
 				(font
@@ -6009,7 +6112,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR028")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -6025,7 +6128,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4fb1be76-2ce8-4adf-b06a-188b0d0a212d")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR015"
 			(at 53.34 105.41 0)
 			(effects
 				(font
@@ -6075,7 +6178,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR010")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -6091,7 +6194,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5803cd37-77d7-42d4-a81f-215bc0cd1adf")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR02"
 			(at 167.64 35.56 0)
 			(effects
 				(font
@@ -6141,7 +6244,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR03")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -6223,7 +6326,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "63d84daf-a6bc-4a63-abed-ac9fed3987ec")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR018"
 			(at 180.34 114.3 0)
 			(effects
 				(font
@@ -6273,7 +6376,7 @@
 		(instances
 			(project ""
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR016")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -6437,7 +6540,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7075dad6-f466-46c0-b134-c84f7e430921")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR021"
 			(at 148.59 118.11 0)
 			(effects
 				(font
@@ -6487,7 +6590,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR014")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -6503,7 +6606,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7870017f-336c-4596-b23c-3759de670766")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR013"
 			(at 215.9 104.14 0)
 			(effects
 				(font
@@ -6553,7 +6656,7 @@
 		(instances
 			(project ""
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR019")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -6637,7 +6740,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7fb482ce-6c96-4801-9c2e-712e61401533")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR01"
 			(at 157.48 35.56 0)
 			(effects
 				(font
@@ -6687,7 +6790,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR02")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -6826,25 +6929,26 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 265.43 138.43 0)
+		(lib_id "PWR:GND_Slave")
+		(at 270.51 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "9cd53845-62d3-4129-ac16-b6faca32a6b9")
-		(property "Reference" "SW4"
-			(at 265.43 130.81 0)
+		(uuid "aa507609-5062-4d8a-821b-886bf5d1e45f")
+		(property "Reference" "#PWR025"
+			(at 270.51 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 265.43 133.35 0)
+		(property "Value" "GND_{Slave}"
+			(at 270.51 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6852,7 +6956,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 265.43 133.35 0)
+			(at 270.51 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6860,8 +6964,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 265.43 133.35 0)
+		(property "Datasheet" ""
+			(at 270.51 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6869,25 +6973,22 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 265.43 138.43 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 270.51 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "e3631e0f-bf08-4e7f-a3ce-4f4de84e58f6")
 		)
 		(pin "1"
-			(uuid "95c655a3-d472-464c-ab8e-7989a2c5ea9a")
+			(uuid "c794079f-9ed1-4404-857b-0c6437295d10")
 		)
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "SW4")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -6903,7 +7004,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "acb1c8a4-60f7-4dd1-b843-d85f40f2cc1a")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR09"
 			(at 63.5 53.34 0)
 			(effects
 				(font
@@ -6953,7 +7054,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR05")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -7037,15 +7138,15 @@
 	)
 	(symbol
 		(lib_id "PWR:GND_Slave")
-		(at 115.57 168.91 0)
+		(at 118.11 168.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "b03140bc-b143-4bcc-bb47-68dc5015aa4d")
-		(property "Reference" "#PWR023"
-			(at 115.57 175.26 0)
+		(property "Reference" "#PWR029"
+			(at 118.11 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7054,7 +7155,7 @@
 			)
 		)
 		(property "Value" "GND_{Slave}"
-			(at 121.412 170.18 0)
+			(at 123.952 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7062,7 +7163,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 115.57 168.91 0)
+			(at 118.11 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7071,7 +7172,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 168.91 0)
+			(at 118.11 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7080,7 +7181,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 115.57 168.91 0)
+			(at 118.11 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7094,7 +7195,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR023")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -7176,7 +7277,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "be0f6566-94ad-4e91-9000-9aebc9104dd6")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR028"
 			(at 52.07 175.26 0)
 			(effects
 				(font
@@ -7226,7 +7327,7 @@
 		(instances
 			(project ""
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR022")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -7242,7 +7343,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c2634bf1-044f-4e3a-b0de-4cb00001a358")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR04"
 			(at 187.96 38.1 0)
 			(effects
 				(font
@@ -7292,7 +7393,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR029")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -7308,7 +7409,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c2fa0f8b-bb92-4d1c-9594-3c2c310dae7b")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR014"
 			(at 44.45 105.41 0)
 			(effects
 				(font
@@ -7358,7 +7459,7 @@
 		(instances
 			(project ""
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR09")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -7444,6 +7545,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 270.51 121.92 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cdc10540-e204-4c11-8ede-e471eccf115a")
+		(property "Reference" "D1"
+			(at 274.32 122.2374 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED"
+			(at 274.32 124.7774 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 270.51 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 270.51 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 270.51 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 270.51 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6b19607f-6a2b-485f-9fbb-95d7503aeb28")
+		)
+		(pin "1"
+			(uuid "0683a349-6723-4b72-adc8-97a4bf581440")
+		)
+		(instances
+			(project ""
+				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PWR:GND_Slave")
 		(at 215.9 135.89 0)
 		(unit 1)
@@ -7453,7 +7633,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d210ab92-8bac-464b-a87c-7feea088f468")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR022"
 			(at 215.9 142.24 0)
 			(effects
 				(font
@@ -7503,7 +7683,7 @@
 		(instances
 			(project ""
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR026")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -7655,7 +7835,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f2472259-dcf8-4b47-9ee9-5e19a3432a5f")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR026"
 			(at 52.07 170.18 0)
 			(effects
 				(font
@@ -7705,7 +7885,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR020")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -7721,7 +7901,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f432355a-a382-4d15-bc85-0d2d4187eb66")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR06"
 			(at 45.72 38.1 0)
 			(effects
 				(font
@@ -7771,7 +7951,7 @@
 		(instances
 			(project ""
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR01")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -7787,7 +7967,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f5f7ab44-f048-4877-b1a4-097a2ce4bbb5")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR017"
 			(at 167.64 114.3 0)
 			(effects
 				(font
@@ -7837,75 +8017,7 @@
 		(instances
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR015")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 265.43 123.19 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f8f78bd1-e7b6-43a3-82c9-51ca0a5dd996")
-		(property "Reference" "SW3"
-			(at 265.43 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 265.43 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 265.43 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 265.43 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 265.43 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "19026006-754d-4723-8ac7-6b29bb11d015")
-		)
-		(pin "1"
-			(uuid "289a6199-4db7-4201-8bf2-949577222d61")
-		)
-		(instances
-			(project "OSASU_Keyboard"
-				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "SW3")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -8045,7 +8157,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fc417b32-6e89-4db9-bcf4-5db641eac852")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR08"
 			(at 54.61 53.34 0)
 			(effects
 				(font
@@ -8095,7 +8207,7 @@
 		(instances
 			(project ""
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR04")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -8110,7 +8222,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fc69e7b0-366e-4d04-8339-5393a8303375")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR016"
 			(at 144.78 106.68 0)
 			(effects
 				(font
@@ -8160,7 +8272,7 @@
 		(instances
 			(project ""
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR08")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -8176,7 +8288,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fc77165e-f091-4542-8f6e-739d25fa1937")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR010"
 			(at 26.67 78.74 0)
 			(effects
 				(font
@@ -8226,7 +8338,7 @@
 		(instances
 			(project ""
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "#PWR07")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
