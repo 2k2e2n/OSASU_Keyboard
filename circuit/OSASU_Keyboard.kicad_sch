@@ -3818,6 +3818,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 48.26) (xy 50.8 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09f8c550-b7bf-4688-9851-f4079ec497c1")
+	)
+	(wire
+		(pts
 			(xy 48.26 53.34) (xy 48.26 57.15)
 		)
 		(stroke
@@ -4080,16 +4090,6 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 49.53) (xy 50.8 54.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "60398f35-cdf3-4d8a-8bce-ff8f558c08ab")
-	)
-	(wire
-		(pts
 			(xy 26.67 72.39) (xy 30.48 72.39)
 		)
 		(stroke
@@ -4160,6 +4160,16 @@
 	)
 	(wire
 		(pts
+			(xy 49.53 46.99) (xy 50.8 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "836c7bde-5f8b-47b5-8928-22c7416e59ac")
+	)
+	(wire
+		(pts
 			(xy 116.84 184.15) (xy 124.46 184.15)
 		)
 		(stroke
@@ -4170,7 +4180,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 46.99) (xy 48.26 46.99)
+			(xy 45.72 46.99) (xy 49.53 46.99)
 		)
 		(stroke
 			(width 0)
@@ -4459,16 +4469,6 @@
 			(type default)
 		)
 		(uuid "f98c724e-bfb9-498e-850d-43466e232d41")
-	)
-	(wire
-		(pts
-			(xy 48.26 46.99) (xy 50.8 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fa097277-e078-4b53-85de-a7723037db26")
 	)
 	(wire
 		(pts
@@ -4967,7 +4967,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
 			(at 34.29 49.53 0)
 			(effects
 				(font
@@ -5136,7 +5136,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 181.3052 107.95 0)
 			(effects
 				(font
@@ -5206,7 +5206,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 112.522 50.8 90)
 			(effects
 				(font
@@ -5474,7 +5474,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 232.1052 149.86 0)
 			(effects
 				(font
@@ -5544,7 +5544,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 61.722 43.18 90)
 			(effects
 				(font
@@ -5614,7 +5614,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 52.832 43.18 90)
 			(effects
 				(font
@@ -5749,7 +5749,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 51.562 105.41 90)
 			(effects
 				(font
@@ -6008,7 +6008,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 42.672 105.41 90)
 			(effects
 				(font
@@ -6407,7 +6407,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Horizontal"
 			(at 88.9 171.45 0)
 			(effects
 				(font
@@ -6486,7 +6486,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 168.6052 107.95 0)
 			(effects
 				(font
@@ -6686,7 +6686,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
 			(at 265.43 102.87 0)
 			(effects
 				(font
@@ -7083,7 +7083,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Horizontal"
 			(at 95.25 171.45 0)
 			(effects
 				(font
@@ -7491,7 +7491,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Horizontal"
 			(at 138.43 171.45 0)
 			(effects
 				(font
@@ -7570,7 +7570,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_THT:LED_D5.0mm"
 			(at 270.51 121.92 0)
 			(effects
 				(font
@@ -7715,7 +7715,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
 			(at 109.22 41.91 0)
 			(effects
 				(font
