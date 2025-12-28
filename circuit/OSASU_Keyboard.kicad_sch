@@ -7790,7 +7790,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "LED_SMD:LED_Yuji_5730"
 			(at 270.51 121.92 0)
 			(effects
 				(font
