@@ -1,4 +1,4 @@
-27796939320947533
+27798707632090413
 1U_Rotary_Encorder_FootPrint
 1U_Rotary_Encoder_Switch
 
@@ -109934,6 +109934,13 @@ SON50P300X200X60-9N
 0
 9
 9
+custom
+PinHeader_1x05_P2.54mm_Right_angle
+Through hole angled pin header, 1x05, 2.54mm pitch, 6mm pin length, single row
+Through hole angled pin header THT 1x05 2.54mm single row
+0
+5
+5
 dcdc-converter
 MT3608
 

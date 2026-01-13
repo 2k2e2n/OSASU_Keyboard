@@ -7711,7 +7711,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Horizontal"
+		(property "Footprint" "custom:PinHeader_1x05_P2.54mm_Right_angle"
 			(at 138.43 171.45 0)
 			(effects
 				(font
