@@ -960,7 +960,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Horizontal"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
 			(at 181.61 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -1049,7 +1049,7 @@
 				)
 			)
 		)
-		(property "Footprint" "custom:PinHeader_1x05_P2.54mm_Right_angle"
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Horizontal"
 			(at 193.04 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -1137,7 +1137,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Horizontal"
+		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
 			(at 110.49 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -1318,7 +1318,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "custom:PinHeader_1x05_P2.54mm_Right_angle"
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Horizontal"
 			(at 157.48 91.44 0)
 			(hide yes)
 			(show_name no)
