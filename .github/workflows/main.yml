@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/inti-cmnb/kicad9_auto_full:latest
+      image: ghcr.io/kicad/kicad:nightly
       options: --user root
 
     steps:
@@ -45,14 +45,26 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          kicad-cli sch export pdf --output schematic.pdf "${SCH_NAME}"
+          kicad-cli version
+          sch_dir="$(dirname "${SCH_NAME}")"
+          sch_file="$(basename "${SCH_NAME}")"
+          (
+            cd "${sch_dir}"
+            kicad-cli sch export pdf --output schematic.pdf "${sch_file}"
+          )
+          cp -f "${sch_dir}/schematic.pdf" ./schematic.pdf
           ls -l schematic.pdf
+
+      - name: Install KiBot
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --break-system-packages kibot
 
       - name: Build BOM and 3D outputs with KiBot
         shell: bash
         run: |
           set -euo pipefail
-
           if [[ ! -f kibot.yaml ]]; then
             echo "kibot.yaml not found in repository root"
             exit 1
