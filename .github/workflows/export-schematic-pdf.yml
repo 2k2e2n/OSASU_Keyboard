@@ -10,6 +10,9 @@ jobs:
   export-schematic-pdf:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/kicad/kicad:nightly
+      options: --user root
 
     steps:
       - name: Checkout repository
@@ -17,10 +20,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install KiCad CLI
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y kicad
+      - name: Show KiCad CLI version
+        run: kicad-cli version
 
       - name: Export schematic PDFs
         shell: bash
