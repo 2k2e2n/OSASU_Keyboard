@@ -1,0 +1,60 @@
+name: Export KiCad Schematic PDFs
+
+on:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  export-schematic-pdf:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+      - name: Install KiCad CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y kicad
+
+      - name: Export schematic PDFs
+      shell: bash
+      run: |
+        set -euo pipefail
+        outdir="artifacts/schematic-pdf"
+        mkdir -p "$outdir"
+
+        mapfile -t sch_files < <(find circuit -name "*.kicad_sch" -type f | sort)
+
+        if [ "${#sch_files[@]}" -eq 0 ]; then
+          echo "No schematic files found under circuit/"
+          exit 0
+        fi
+
+        for sch in "${sch_files[@]}"; do
+          base="$(basename "$sch" .kicad_sch)"
+          out="$outdir/$base.pdf"
+          echo "Exporting: $sch -> $out"
+          kicad-cli sch export pdf "$sch" -o "$out"
+        done
+
+      - name: Commit generated PDFs
+      shell: bash
+      run: |
+        set -euo pipefail
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add artifacts/schematic-pdf/*.pdf || true
+
+        if git diff --cached --quiet; then
+          echo "No schematic PDF changes."
+          exit 0
+        fi
+
+        git commit -m "chore: update schematic pdfs [skip ci]"
+        git push
