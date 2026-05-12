@@ -41,7 +41,13 @@ jobs:
             base="$(basename "$sch" .kicad_sch)"
             out="$outdir/$base.pdf"
             echo "Exporting: $sch -> $out"
-            kicad-cli sch export pdf "$sch" -o "$out"
+            sch_dir="$(dirname "$sch")"
+            sch_file="$(basename "$sch")"
+            (
+              cd "$sch_dir"
+              kicad-cli sch export pdf "$sch_file" -o "$(basename "$out")"
+            )
+            cp -f "$sch_dir/$(basename "$out")" "$out"
           done
 
       - name: Commit generated PDFs
