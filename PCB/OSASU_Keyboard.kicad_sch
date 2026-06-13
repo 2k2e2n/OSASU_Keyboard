@@ -5,7 +5,8 @@
 	(uuid "84df409d-4a1b-4f85-a3c2-89dbdb50c821")
 	(paper "A4")
 	(title_block
-		(date "2025-12-22")
+		(title "OSASU-keyboard")
+		(date "2026-06-10")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x05_Pin"
@@ -622,18 +623,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(rectangle
-		(start 185.42 83.82)
-		(end 201.93 99.06)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "57f8ce30-13bb-43bc-9741-d967a2fc2a12")
-	)
 	(text_box "1.27mm 5pin"
 		(exclude_from_sim no)
 		(at 121.92 109.22 0)
@@ -721,16 +710,6 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 96.52) (xy 187.96 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2287cb56-21b2-4af3-aacf-82222c3cd55c")
-	)
-	(wire
-		(pts
 			(xy 115.57 96.52) (xy 118.11 96.52)
 		)
 		(stroke
@@ -738,16 +717,6 @@
 			(type default)
 		)
 		(uuid "23803887-abb7-4224-84e4-647adc0061b4")
-	)
-	(wire
-		(pts
-			(xy 186.69 88.9) (xy 195.58 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "520f3933-f84c-42a5-a9da-cf548d70c53f")
 	)
 	(wire
 		(pts
@@ -771,16 +740,6 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 86.36) (xy 198.12 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6e7a9719-4062-4228-aa15-0a58c7a21846")
-	)
-	(wire
-		(pts
 			(xy 85.09 91.44) (xy 81.28 91.44)
 		)
 		(stroke
@@ -798,16 +757,6 @@
 			(type default)
 		)
 		(uuid "91041028-831f-41d1-bd79-f7ad421205a8")
-	)
-	(wire
-		(pts
-			(xy 198.12 86.36) (xy 198.12 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9c63331b-ac83-499b-9260-b047dec32c14")
 	)
 	(wire
 		(pts
@@ -851,26 +800,6 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 93.98) (xy 190.5 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c883fd4c-70e9-4e10-bf0d-82f35d470867")
-	)
-	(wire
-		(pts
-			(xy 195.58 88.9) (xy 195.58 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cef4826d-4a06-4850-be57-73dbbd0dbdf2")
-	)
-	(wire
-		(pts
 			(xy 118.11 91.44) (xy 152.4 91.44)
 		)
 		(stroke
@@ -881,16 +810,6 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 91.44) (xy 193.04 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d5af92ee-62d8-4732-aa5b-4a0b98395a83")
-	)
-	(wire
-		(pts
 			(xy 85.09 93.98) (xy 81.28 93.98)
 		)
 		(stroke
@@ -898,213 +817,6 @@
 			(type default)
 		)
 		(uuid "dba31827-2fa9-4b12-9cd8-89ee3578b3aa")
-	)
-	(wire
-		(pts
-			(xy 187.96 96.52) (xy 187.96 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ec863bc1-b32f-43f9-8e69-665a4bed89c3")
-	)
-	(wire
-		(pts
-			(xy 190.5 93.98) (xy 190.5 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f4ed3580-0909-4d56-a62d-f382c0d55068")
-	)
-	(wire
-		(pts
-			(xy 193.04 91.44) (xy 193.04 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc68c388-5e81-48dd-982b-8d86ee1e5645")
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x05_Socket")
-		(at 181.61 91.44 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "596a5983-1c2b-4c90-a3ed-b21d1299a46a")
-		(property "Reference" "J4"
-			(at 186.69 81.026 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x05_Socket"
-			(at 188.976 82.55 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
-			(at 181.61 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 181.61 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x05, script generated"
-			(at 181.61 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "94fe1d95-a1da-4ca8-a3fb-0d155cb1288f")
-		)
-		(pin "5"
-			(uuid "4077a95d-bd15-40ea-9bcb-784f4f8bfd84")
-		)
-		(pin "1"
-			(uuid "4c6395a6-cccc-419e-9f36-4df7530f06ad")
-		)
-		(pin "3"
-			(uuid "fd9615fa-5442-4c6a-b6f5-6bb8ac259685")
-		)
-		(pin "2"
-			(uuid "be9fddc9-7cd2-410a-806f-467b6231292e")
-		)
-		(instances
-			(project "OSASU_Keyboard"
-				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x05_Pin")
-		(at 193.04 102.87 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cd764440-7e09-468c-baed-9ce675461286")
-		(property "Reference" "J5"
-			(at 193.04 105.41 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x05_Pin"
-			(at 193.04 107.95 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Horizontal"
-			(at 193.04 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x05, script generated"
-			(at 193.04 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6c6d068b-175f-4dff-b96b-6efdd1fc4939")
-		)
-		(pin "4"
-			(uuid "c5a3900a-2e9c-4ad0-9942-25637d534ae9")
-		)
-		(pin "3"
-			(uuid "6e96989f-849a-4b10-965f-f2ba66e95705")
-		)
-		(pin "5"
-			(uuid "0511264b-ec5a-48de-8ca7-95a398f52b99")
-		)
-		(pin "2"
-			(uuid "6db3135c-59a1-4c47-a9aa-3d31165cb445")
-		)
-		(instances
-			(project "OSASU_Keyboard"
-				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821"
-					(reference "J5")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x05_Socket")
@@ -1137,7 +849,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical"
+		(property "Footprint" "custom:PinHeader_1x05_P1.27mm_Horizontal_SMD"
 			(at 110.49 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -1227,7 +939,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Horizontal"
+		(property "Footprint" "custom:PinHeader_1x05_P1.27mm_Horizontal_SMD(inversed)"
 			(at 90.17 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -1318,7 +1030,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x05_P1.27mm_Horizontal"
+		(property "Footprint" "custom:PinHeader_1x05_P1.27mm_Horizontal_SMD(inversed)"
 			(at 157.48 91.44 0)
 			(hide yes)
 			(show_name no)
