@@ -13,7 +13,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          
+
+      # ▼これを追加して、Actionsのログでファイル名がどう認識されているか確認する▼
+      - name: Check files in PCB directory
+        run: ls -la PCB/
+
+        
       - uses: sksat/kicadiff@v0.2.0 # または @main
         with:
           # プロジェクトファイルがあるディレクトリ（フォルダ）のパスを指定します
