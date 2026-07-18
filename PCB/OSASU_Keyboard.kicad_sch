@@ -625,7 +625,7 @@
 	)
 	(text_box "1.27mm 5pin"
 		(exclude_from_sim no)
-		(at 121.92 109.22 0)
+		(at 115.57 110.49 0)
 		(size 27.94 8.89)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke

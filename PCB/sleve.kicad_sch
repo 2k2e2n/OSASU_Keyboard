@@ -2232,16 +2232,6 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 93.98) (xy 139.7 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "09d707d5-46de-4d36-8a3e-efd1e43d3b66")
-	)
-	(wire
-		(pts
 			(xy 121.92 88.9) (xy 118.11 88.9)
 		)
 		(stroke
@@ -2249,6 +2239,16 @@
 			(type default)
 		)
 		(uuid "0e6e5263-f8dc-4b29-ba0a-3478a8e4c7f3")
+	)
+	(wire
+		(pts
+			(xy 139.7 96.52) (xy 139.7 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16764e4f-af78-4ffc-af2b-6b05fb64e502")
 	)
 	(wire
 		(pts
@@ -2309,6 +2309,16 @@
 			(type default)
 		)
 		(uuid "4b57518f-a446-45a9-81b3-165174df14dd")
+	)
+	(wire
+		(pts
+			(xy 139.7 93.98) (xy 118.11 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ebee7a5-d718-4125-99c8-d57772d1f146")
 	)
 	(wire
 		(pts
@@ -3674,7 +3684,7 @@
 	)
 	(symbol
 		(lib_id "PWR:GND_Slave")
-		(at 139.7 104.14 0)
+		(at 139.7 106.68 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3685,7 +3695,7 @@
 		(fields_autoplaced yes)
 		(uuid "bda945d7-2e25-47b1-b7c3-6a004c332ea3")
 		(property "Reference" "#PWR023"
-			(at 139.7 110.49 0)
+			(at 139.7 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3696,7 +3706,7 @@
 			)
 		)
 		(property "Value" "GND_{Slave}"
-			(at 139.7 109.22 0)
+			(at 139.7 111.76 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3706,7 +3716,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 139.7 104.14 0)
+			(at 139.7 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3717,7 +3727,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 104.14 0)
+			(at 139.7 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3728,7 +3738,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 139.7 104.14 0)
+			(at 139.7 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4043,7 +4053,7 @@
 	)
 	(symbol
 		(lib_id "Jumper:Jumper_2_Open")
-		(at 139.7 99.06 270)
+		(at 139.7 101.6 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4054,17 +4064,6 @@
 		(fields_autoplaced yes)
 		(uuid "e39c3a30-6916-4cd2-a0ed-d6cf633d6360")
 		(property "Reference" "JP3"
-			(at 142.24 97.7899 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Jumper_2_Open"
 			(at 142.24 100.3299 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4075,8 +4074,19 @@
 				(justify left)
 			)
 		)
+		(property "Value" "Jumper_2_Open"
+			(at 142.24 102.8699 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 139.7 99.06 0)
+			(at 139.7 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4087,7 +4097,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 99.06 0)
+			(at 139.7 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4098,7 +4108,7 @@
 			)
 		)
 		(property "Description" "Jumper, 2-pole, open"
-			(at 139.7 99.06 0)
+			(at 139.7 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
