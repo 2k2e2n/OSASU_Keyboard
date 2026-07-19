@@ -2,22 +2,95 @@
 name: KiCad visual diff
 on:
   push:
+    branches: ["master"]
     paths: ["PCB/**/*.kicad_pcb", "PCB/**/*.kicad_sch"]
   pull_request:
     paths: ["PCB/**/*.kicad_pcb", "PCB/**/*.kicad_sch"]
   workflow_dispatch: {}
+
 permissions:
-  contents: read
+  contents: write        # READMEへのコミット&プッシュに必要（read から write に変更）
   pull-requests: write
+
 jobs:
   diff:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
         with: { fetch-depth: 0 }
+
       - uses: sksat/kicadiff@v0.2.0
+        id: kicadiff
         with:
           path: PCB
           upload-artifact: 'true'
           pr-comment: 'true'
           pr-description: 'true'
+
+      # push時のみ実行。PR時はREADMEを勝手に書き換えたくないので除外。
+      - name: Update README preview image
+        if: github.event_name != 'pull_request'
+        shell: bash
+        env:
+          OUT_DIR: ${{ steps.kicadiff.outputs.output-dir }}
+        run: |
+          set -eu
+          DEST_DIR="docs/kicad-preview"
+          mkdir -p "$DEST_DIR"
+
+          # 既存画像を消して作り直す（削除されたファイルの残骸を防ぐ）
+          rm -f "$DEST_DIR"/*.png
+          if [ -d "$OUT_DIR/after" ]; then
+            cp -f "$OUT_DIR"/after/*.png "$DEST_DIR"/ 2>/dev/null || true
+          fi
+
+          SECTION="$(mktemp)"
+          {
+            echo '<!-- kicadiff:preview:start -->'
+            echo '## PCB Preview'
+            echo
+            for f in "$DEST_DIR"/*.png; do
+              [ -f "$f" ] || continue
+              name="$(basename "$f")"
+              echo "![${name}](${DEST_DIR}/${name})"
+              echo
+            done
+            echo '<!-- kicadiff:preview:end -->'
+          } > "$SECTION"
+
+          SECTION_PATH="$SECTION" python3 - <<'PY'
+          import os, re
+          section_path = os.environ["SECTION_PATH"]
+          with open(section_path) as f:
+              new_section = f.read().rstrip("\n")
+          try:
+              with open("README.md") as f:
+                  current = f.read()
+          except FileNotFoundError:
+              current = ""
+          pattern = re.compile(
+              r"^<!-- kicadiff:preview:start -->.*?^<!-- kicadiff:preview:end -->",
+              re.DOTALL | re.MULTILINE,
+          )
+          if pattern.search(current):
+              out = pattern.sub(new_section, current)
+          else:
+              sep = "\n\n" if current.strip() else ""
+              out = current + sep + new_section + "\n"
+          with open("README.md", "w") as f:
+              f.write(out)
+          PY
+
+      - name: Commit and push preview
+        if: github.event_name != 'pull_request'
+        run: |
+          set -eu
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add README.md docs/kicad-preview
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(kicadiff): update PCB preview image"
+          git push
