@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@v6
         with: { fetch-depth: 0 }
 
+
       - uses: sksat/kicadiff@v0.2.0
         id: kicadiff
         with:
@@ -29,17 +30,24 @@ jobs:
           pr-comment: 'true'
           pr-description: 'true'
 
-      # kicadiffのHTMLビューアを index.html としてPages公開用に配置
+      # composite actionは --md 専用呼び出しなのでHTMLを吐かない。
+      # インタラクティブビューアが欲しいので同条件でもう一度単体実行する。
+      - name: Generate HTML viewer
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          set -eu
+          mkdir -p viewer-output
+          bunx --bun kicadiff --from HEAD~1 --output-dir viewer-output -- PCB
+
       - name: Prepare Pages content
         if: github.event_name != 'pull_request'
         shell: bash
-        env:
-          OUT_DIR: ${{ steps.kicadiff.outputs.output-dir }}
         run: |
           set -eu
           mkdir -p pages-out
-          cp "$OUT_DIR"/*.html pages-out/index.html
-          cp -r "$OUT_DIR"/before "$OUT_DIR"/after pages-out/ 2>/dev/null || true
+          cp viewer-output/*.html pages-out/index.html
+          cp -r viewer-output/before viewer-output/after pages-out/ 2>/dev/null || true
 
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
@@ -51,7 +59,7 @@ jobs:
         if: github.event_name != 'pull_request'
         id: deployment
         uses: actions/deploy-pages@v4
-
+        
       # READMEにPagesへのリンクを挿入
       - name: Update README with viewer link
         if: github.event_name != 'pull_request'
