@@ -9,8 +9,10 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: write        # READMEへのコミット&プッシュに必要（read から write に変更）
+  contents: write
   pull-requests: write
+  pages: write
+  id-token: write
 
 jobs:
   diff:
@@ -18,6 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with: { fetch-depth: 0 }
+
       - uses: sksat/kicadiff@v0.2.0
         id: kicadiff
         with:
@@ -26,91 +29,47 @@ jobs:
           pr-comment: 'true'
           pr-description: 'true'
 
-      - name: Set background color of rendered images
-        shell: bash
-        env:
-          OUT_DIR: ${{ steps.kicadiff.outputs.output-dir }}
-        run: |
-          set -eu
-          pip install --quiet Pillow numpy
-
-          python3 - <<'PY'
-          import os
-          import numpy as np
-          from PIL import Image
-
-          out_dir = os.environ["OUT_DIR"]
-          TARGET = (0xf5, 0xf4, 0xf0)   # 置き換え後の背景色
-          KEY = (0x1e, 0x1e, 0x1e)      # kicadiffのPCB合成キャンバス色
-          TOLERANCE = 20                 # 0-255. 縁のアンチエイリアスも拾う
-
-          for side in ("before", "after"):
-              d = os.path.join(out_dir, side)
-              if not os.path.isdir(d):
-                  continue
-              for name in os.listdir(d):
-                  if not name.endswith(".png"):
-                      continue
-                  path = os.path.join(d, name)
-                  img = Image.open(path).convert("RGBA")
-                  arr = np.array(img).astype(np.int16)
-                  r, g, b, a = arr[..., 0], arr[..., 1], arr[..., 2], arr[..., 3]
-
-                  # 1. PCB: 不透明な #1e1e1e 近似ピクセル(合成キャンバス)を置換
-                  key_mask = (
-                      (a == 255)
-                      & (np.abs(r - KEY[0]) <= TOLERANCE)
-                      & (np.abs(g - KEY[1]) <= TOLERANCE)
-                      & (np.abs(b - KEY[2]) <= TOLERANCE)
-                  )
-                  arr[key_mask, 0] = TARGET[0]
-                  arr[key_mask, 1] = TARGET[1]
-                  arr[key_mask, 2] = TARGET[2]
-
-                  out = Image.fromarray(arr.astype(np.uint8), "RGBA")
-
-                  # 2. Schematic: 透明部分を背景色でフラット化(不透明PNGとして保存)
-                  bg = Image.new("RGBA", out.size, TARGET + (255,))
-                  flattened = Image.alpha_composite(bg, out).convert("RGB")
-                  flattened.save(path)
-                  print(f"processed: {path}")
-          PY
-
-      # push時のみ実行。PR時はREADMEを勝手に書き換えたくないので除外。
-      - name: Update README preview image
+      # kicadiffのHTMLビューアを index.html としてPages公開用に配置
+      - name: Prepare Pages content
         if: github.event_name != 'pull_request'
         shell: bash
         env:
           OUT_DIR: ${{ steps.kicadiff.outputs.output-dir }}
         run: |
           set -eu
-          DEST_DIR="docs/kicad-preview"
-          mkdir -p "$DEST_DIR"
+          mkdir -p pages-out
+          cp "$OUT_DIR"/*.html pages-out/index.html
+          cp -r "$OUT_DIR"/before "$OUT_DIR"/after pages-out/ 2>/dev/null || true
 
-          # 既存画像を消して作り直す（削除されたファイルの残骸を防ぐ）
-          rm -f "$DEST_DIR"/*.png
-          if [ -d "$OUT_DIR/after" ]; then
-            cp -f "$OUT_DIR"/after/*.png "$DEST_DIR"/ 2>/dev/null || true
-          fi
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: pages-out
 
+      - name: Deploy to GitHub Pages
+        if: github.event_name != 'pull_request'
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      # READMEにPagesへのリンクを挿入
+      - name: Update README with viewer link
+        if: github.event_name != 'pull_request'
+        shell: bash
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          set -eu
           SECTION="$(mktemp)"
           {
-            echo '<!-- kicadiff:preview:start -->'
-            echo '## PCB Preview'
-            echo
-            for f in "$DEST_DIR"/*.png; do
-              [ -f "$f" ] || continue
-              name="$(basename "$f")"
-              echo "![${name}](${DEST_DIR}/${name})"
-              echo
-            done
-            echo '<!-- kicadiff:preview:end -->'
+            echo '<!-- kicadiff:viewer:start -->'
+            echo "## 🔍 [View interactive PCB/schematic diff](${PAGE_URL})"
+            echo '<!-- kicadiff:viewer:end -->'
           } > "$SECTION"
 
           SECTION_PATH="$SECTION" python3 - <<'PY'
           import os, re
-          section_path = os.environ["SECTION_PATH"]
-          with open(section_path) as f:
+          with open(os.environ["SECTION_PATH"]) as f:
               new_section = f.read().rstrip("\n")
           try:
               with open("README.md") as f:
@@ -118,28 +77,21 @@ jobs:
           except FileNotFoundError:
               current = ""
           pattern = re.compile(
-              r"^<!-- kicadiff:preview:start -->.*?^<!-- kicadiff:preview:end -->",
+              r"^<!-- kicadiff:viewer:start -->.*?^<!-- kicadiff:viewer:end -->",
               re.DOTALL | re.MULTILINE,
           )
-          if pattern.search(current):
-              out = pattern.sub(new_section, current)
-          else:
-              sep = "\n\n" if current.strip() else ""
-              out = current + sep + new_section + "\n"
+          out = pattern.sub(new_section, current) if pattern.search(current) \
+              else current + ("\n\n" if current.strip() else "") + new_section + "\n"
           with open("README.md", "w") as f:
               f.write(out)
           PY
 
-      - name: Commit and push preview
+      - name: Commit and push README
         if: github.event_name != 'pull_request'
         run: |
           set -eu
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git add README.md docs/kicad-preview
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
-          git commit -m "chore(kicadiff): update PCB preview image"
+          git add README.md
+          git diff --cached --quiet || git commit -m "chore(kicadiff): update viewer link"
           git push

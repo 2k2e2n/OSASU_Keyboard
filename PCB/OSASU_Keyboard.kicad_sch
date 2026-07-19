@@ -1195,7 +1195,7 @@
 	)
 	(symbol
 		(lib_id "Graphic:SYM_EasterEgg_42x60mm")
-		(at 74.93 76.2 0)
+		(at 82.55 184.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim yes)
@@ -1206,7 +1206,7 @@
 		(fields_autoplaced yes)
 		(uuid "63ed4103-35e3-4c11-ae11-04c8f4849bd8")
 		(property "Reference" "SYM1"
-			(at 74.93 76.2 0)
+			(at 82.55 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1217,7 +1217,7 @@
 			)
 		)
 		(property "Value" "SYM_EasterEgg_42x60mm"
-			(at 74.93 76.2 0)
+			(at 82.55 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1228,7 +1228,7 @@
 			)
 		)
 		(property "Footprint" "Symbol:EasterEgg_EWG1308-2013_ClassA"
-			(at 74.93 80.01 0)
+			(at 82.55 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1239,7 +1239,7 @@
 			)
 		)
 		(property "Datasheet" "https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2013:347:0671:0854:de:PDF"
-			(at 74.93 82.55 0)
+			(at 82.55 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1250,7 +1250,7 @@
 			)
 		)
 		(property "Description" "EasterEgg, ClassA, Medium Size"
-			(at 74.93 76.2 0)
+			(at 82.55 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
