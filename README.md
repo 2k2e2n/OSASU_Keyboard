@@ -18,3 +18,8 @@ takeishi, wataken
 ![PCB_OSASU_Keyboard.kicad_sch.png](docs/kicad-preview/PCB_OSASU_Keyboard.kicad_sch.png)
 
 <!-- kicadiff:preview:end -->
+
+
+<!-- kicadiff:viewer:start -->
+## 🔍 [View interactive PCB/schematic diff](https://2k2e2n.github.io/OSASU_Keyboard/)
+<!-- kicadiff:viewer:end -->
