@@ -2242,7 +2242,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 96.52) (xy 139.7 93.98)
+			(xy 139.7 95.25) (xy 139.7 93.98)
 		)
 		(stroke
 			(width 0)
@@ -2419,6 +2419,16 @@
 			(type default)
 		)
 		(uuid "bd55b770-3056-4392-a1fb-532dfcdff3ad")
+	)
+	(wire
+		(pts
+			(xy 139.7 105.41) (xy 139.7 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5f2aa8a-0d4f-4784-bf6c-7fda6e9e7784")
 	)
 	(wire
 		(pts
@@ -4053,7 +4063,7 @@
 	)
 	(symbol
 		(lib_id "Jumper:Jumper_2_Open")
-		(at 139.7 101.6 270)
+		(at 139.7 100.33 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4064,7 +4074,7 @@
 		(fields_autoplaced yes)
 		(uuid "e39c3a30-6916-4cd2-a0ed-d6cf633d6360")
 		(property "Reference" "JP3"
-			(at 142.24 100.3299 90)
+			(at 142.24 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4075,7 +4085,7 @@
 			)
 		)
 		(property "Value" "Jumper_2_Open"
-			(at 142.24 102.8699 90)
+			(at 142.24 101.5999 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4086,7 +4096,7 @@
 			)
 		)
 		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 139.7 101.6 0)
+			(at 139.7 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4097,7 +4107,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 101.6 0)
+			(at 139.7 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4108,7 +4118,7 @@
 			)
 		)
 		(property "Description" "Jumper, 2-pole, open"
-			(at 139.7 101.6 0)
+			(at 139.7 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
