@@ -33,11 +33,13 @@ jobs:
           OUT_DIR: ${{ steps.kicadiff.outputs.output-dir }}
         run: |
           set -eu
+          IM_CMD=magick
+          command -v magick >/dev/null 2>&1 || IM_CMD=convert
           for dir in "$OUT_DIR/before" "$OUT_DIR/after"; do
             [ -d "$dir" ] || continue
             for png in "$dir"/*.png; do
               [ -f "$png" ] || continue
-              magick "$png" -fuzz 8% -fill white -opaque "#1e1e1e" "$png"
+              "$IM_CMD" "$png" -fuzz 8% -fill white -opaque "#1e1e1e" "$png"
             done
           done
 
