@@ -1,41 +1,20 @@
-name: kicadiff
-
-on: [pull_request]
-
+# .github/workflows/kicad-diff.yml
+name: KiCad visual diff
+on:
+  pull_request:
+    paths: ["PCB/**/*.kicad_pcb", "PCB/**/*.kicad_sch"]
+permissions:
+  contents: read
+  pull-requests: write
 jobs:
   diff:
     runs-on: ubuntu-latest
-    # PRに画像付きコメントを投稿するための権限設定
-    permissions:
-      contents: read
-      pull-requests: write 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+        with: { fetch-depth: 0 }
+      - uses: sksat/kicadiff@v0.2.0
         with:
-          fetch-depth: 0
-
-      # ▼これを追加して、Actionsのログでファイル名がどう認識されているか確認する▼
-      - name: Check files in PCB directory
-        run: ls -la PCB/
-        
-# 1. そもそもファイルが存在するか、大文字小文字が合っているか確認する
-      - name: Debug - Check files
-        run: |
-          echo "=== カレントディレクトリ ==="
-          pwd
-          echo "=== PCBディレクトリの中身 ==="
-          ls -la PCB/
-          
-      # 2. ファイルの中身が空っぽでないか確認する
-      - name: Debug - Check file size
-        run: |
-          wc -c PCB/OSASU_Keyboard.kicad_sch
-
-      - uses: sksat/kicadiff@main
-        with:
-          path: PCB/
-        
-      - uses: sksat/kicadiff@v0.2.0 # または @main
-        with:
-          # プロジェクトファイルがあるディレクトリ（フォルダ）のパスを指定します
-          path: PCB/
+          path: PCB
+          upload-artifact: 'true'
+          pr-comment: 'true'
+          pr-description: 'true'
