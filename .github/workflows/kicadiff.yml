@@ -18,7 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with: { fetch-depth: 0 }
-
       - uses: sksat/kicadiff@v0.2.0
         id: kicadiff
         with:
@@ -27,24 +26,23 @@ jobs:
           pr-comment: 'true'
           pr-description: 'true'
 
-      - name: Whiten PCB image background
+      - name: Set background color of rendered images
         shell: bash
         env:
           OUT_DIR: ${{ steps.kicadiff.outputs.output-dir }}
         run: |
           set -eu
-          pip install --quiet Pillow
+          pip install --quiet Pillow numpy
 
           python3 - <<'PY'
           import os
+          import numpy as np
           from PIL import Image
 
           out_dir = os.environ["OUT_DIR"]
-          TARGET = (0x1e, 0x1e, 0x1e)
-          TOLERANCE = 20  # 0-255. #1e1e1e の縁のアンチエイリアスも拾う
-
-          def close(px, target, tol):
-              return all(abs(px[i] - target[i]) <= tol for i in range(3))
+          TARGET = (0xf5, 0xf4, 0xf0)   # 置き換え後の背景色
+          KEY = (0x1e, 0x1e, 0x1e)      # kicadiffのPCB合成キャンバス色
+          TOLERANCE = 20                 # 0-255. 縁のアンチエイリアスも拾う
 
           for side in ("before", "after"):
               d = os.path.join(out_dir, side)
@@ -55,18 +53,27 @@ jobs:
                       continue
                   path = os.path.join(d, name)
                   img = Image.open(path).convert("RGBA")
-                  px = img.load()
-                  w, h = img.size
-                  changed = False
-                  for y in range(h):
-                      for x in range(w):
-                          r, g, b, a = px[x, y]
-                          if a > 0 and close((r, g, b), TARGET, TOLERANCE):
-                              px[x, y] = (255, 255, 255, a)
-                              changed = True
-                  if changed:
-                      img.save(path)
-                      print(f"whitened: {path}")
+                  arr = np.array(img).astype(np.int16)
+                  r, g, b, a = arr[..., 0], arr[..., 1], arr[..., 2], arr[..., 3]
+
+                  # 1. PCB: 不透明な #1e1e1e 近似ピクセル(合成キャンバス)を置換
+                  key_mask = (
+                      (a == 255)
+                      & (np.abs(r - KEY[0]) <= TOLERANCE)
+                      & (np.abs(g - KEY[1]) <= TOLERANCE)
+                      & (np.abs(b - KEY[2]) <= TOLERANCE)
+                  )
+                  arr[key_mask, 0] = TARGET[0]
+                  arr[key_mask, 1] = TARGET[1]
+                  arr[key_mask, 2] = TARGET[2]
+
+                  out = Image.fromarray(arr.astype(np.uint8), "RGBA")
+
+                  # 2. Schematic: 透明部分を背景色でフラット化(不透明PNGとして保存)
+                  bg = Image.new("RGBA", out.size, TARGET + (255,))
+                  flattened = Image.alpha_composite(bg, out).convert("RGB")
+                  flattened.save(path)
+                  print(f"processed: {path}")
           PY
 
       # push時のみ実行。PR時はREADMEを勝手に書き換えたくないので除外。

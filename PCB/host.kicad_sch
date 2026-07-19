@@ -2536,10 +2536,22 @@
 		(uuid "88b5b8d4-e425-42b2-ad8e-7154e778f0b7")
 	)
 	(junction
+		(at 234.95 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a266717f-b767-4053-b48f-e377c3a65d49")
+	)
+	(junction
 		(at 53.34 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c3eea3a6-9050-4145-915d-87c8687eb78b")
+	)
+	(junction
+		(at 224.79 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f5f13f19-a035-4049-91f6-a2df2156e8c9")
 	)
 	(no_connect
 		(at 153.67 115.57)
@@ -2751,6 +2763,16 @@
 	)
 	(wire
 		(pts
+			(xy 234.95 91.44) (xy 245.11 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "538ec207-d5a3-4c8f-8ca0-ad3356318c89")
+	)
+	(wire
+		(pts
 			(xy 53.34 113.03) (xy 53.34 118.11)
 		)
 		(stroke
@@ -2841,6 +2863,16 @@
 	)
 	(wire
 		(pts
+			(xy 214.63 91.44) (xy 224.79 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "808b8cb9-44f1-44b3-823c-36bc05a62d34")
+	)
+	(wire
+		(pts
 			(xy 63.5 120.65) (xy 72.39 120.65)
 		)
 		(stroke
@@ -2898,6 +2930,26 @@
 			(type default)
 		)
 		(uuid "aa1ce68e-6c12-4f38-9560-c6bad1bfd05f")
+	)
+	(wire
+		(pts
+			(xy 214.63 80.01) (xy 224.79 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2265301-ded8-45bc-8f88-4d933db225c7")
+	)
+	(wire
+		(pts
+			(xy 224.79 91.44) (xy 234.95 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cfe9515b-503c-4fd2-ab66-2afdede507d9")
 	)
 	(wire
 		(pts
@@ -3437,6 +3489,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 214.63 95.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "131febf0-ecbd-459e-ae03-3701a7161fc7")
+		(property "Reference" "C6"
+			(at 218.44 93.9799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 218.44 96.5199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 215.5952 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 214.63 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 214.63 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "911049ea-ac48-438b-a8f8-21bd405089b1")
+		)
+		(pin "2"
+			(uuid "f80320f0-4a72-4b3e-aef4-ae19ec9feead")
+		)
+		(instances
+			(project "OSASU_Keyboard"
+				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821/078a4bb9-0d7f-4e0c-abb4-96fab2ea5a2a"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 45.72 124.46 0)
 		(unit 1)
@@ -3593,6 +3727,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 224.79 83.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "206624eb-d8d9-4417-83c7-7f62839fc26e")
+		(property "Reference" "C5"
+			(at 228.6 82.5499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 228.6 85.0899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 225.7552 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 224.79 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 224.79 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6e836ac3-4bed-4169-8e53-8b3de95a3448")
+		)
+		(pin "2"
+			(uuid "300dc12d-bce1-4974-829d-9ac7ba422e59")
+		)
+		(instances
+			(project "OSASU_Keyboard"
+				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821/078a4bb9-0d7f-4e0c-abb4-96fab2ea5a2a"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 168.91 110.49 0)
 		(unit 1)
@@ -3665,6 +3881,88 @@
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821/078a4bb9-0d7f-4e0c-abb4-96fab2ea5a2a"
 					(reference "#PWR020")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 224.79 95.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "261dbe8c-6294-45c6-bb38-317fab8803c3")
+		(property "Reference" "C7"
+			(at 228.6 93.9799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 228.6 96.5199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 225.7552 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 224.79 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 224.79 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dc5a8665-db4a-4690-90f9-8c17a9daaed8")
+		)
+		(pin "2"
+			(uuid "d6656ba8-2342-4da9-a19f-153eb559d121")
+		)
+		(instances
+			(project "OSASU_Keyboard"
+				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821/078a4bb9-0d7f-4e0c-abb4-96fab2ea5a2a"
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -3750,6 +4048,88 @@
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821/078a4bb9-0d7f-4e0c-abb4-96fab2ea5a2a"
 					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 234.95 95.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2a85e96e-ad11-4bc4-89d0-18a4e1efc91c")
+		(property "Reference" "C8"
+			(at 238.76 93.9799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 238.76 96.5199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 235.9152 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 234.95 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 234.95 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "49dc268f-1c2e-4d0b-9e3d-5d785d3e98a3")
+		)
+		(pin "2"
+			(uuid "3e2d3269-7d5f-4caf-b063-ace5dd11474b")
+		)
+		(instances
+			(project "OSASU_Keyboard"
+				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821/078a4bb9-0d7f-4e0c-abb4-96fab2ea5a2a"
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -4780,6 +5160,88 @@
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821/078a4bb9-0d7f-4e0c-abb4-96fab2ea5a2a"
 					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 245.11 95.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "85902695-487d-4fa2-8c4d-d77c8c26a0c4")
+		(property "Reference" "C9"
+			(at 248.92 93.9799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 248.92 96.5199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 246.0752 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 245.11 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 245.11 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6a061625-b76c-4da0-935f-51ead75bf1e4")
+		)
+		(pin "2"
+			(uuid "dde179cb-91c4-4d5c-92e5-2a1d4dd97be1")
+		)
+		(instances
+			(project "OSASU_Keyboard"
+				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821/078a4bb9-0d7f-4e0c-abb4-96fab2ea5a2a"
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -5851,6 +6313,88 @@
 			(project "OSASU_Keyboard"
 				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821/078a4bb9-0d7f-4e0c-abb4-96fab2ea5a2a"
 					(reference "P1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 214.63 83.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d8ae195b-6116-4a47-95f5-2de1f53b208f")
+		(property "Reference" "C4"
+			(at 218.44 82.5499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 218.44 85.0899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 215.5952 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 214.63 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 214.63 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2c5f68f4-fb0e-4b64-a273-1fa768ff45b8")
+		)
+		(pin "2"
+			(uuid "7399b224-6a62-4d67-b2a6-7be241ed90a5")
+		)
+		(instances
+			(project "OSASU_Keyboard"
+				(path "/84df409d-4a1b-4f85-a3c2-89dbdb50c821/078a4bb9-0d7f-4e0c-abb4-96fab2ea5a2a"
+					(reference "C4")
 					(unit 1)
 				)
 			)
