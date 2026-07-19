@@ -17,7 +17,23 @@ jobs:
       # ▼これを追加して、Actionsのログでファイル名がどう認識されているか確認する▼
       - name: Check files in PCB directory
         run: ls -la PCB/
+        
+# 1. そもそもファイルが存在するか、大文字小文字が合っているか確認する
+      - name: Debug - Check files
+        run: |
+          echo "=== カレントディレクトリ ==="
+          pwd
+          echo "=== PCBディレクトリの中身 ==="
+          ls -la PCB/
+          
+      # 2. ファイルの中身が空っぽでないか確認する
+      - name: Debug - Check file size
+        run: |
+          wc -c PCB/OSASU_Keyboard.kicad_sch
 
+      - uses: sksat/kicadiff@main
+        with:
+          path: PCB/
         
       - uses: sksat/kicadiff@v0.2.0 # または @main
         with:
