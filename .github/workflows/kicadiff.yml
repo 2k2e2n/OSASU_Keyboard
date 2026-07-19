@@ -5,6 +5,7 @@ on:
     paths: ["PCB/**/*.kicad_pcb", "PCB/**/*.kicad_sch"]
   pull_request:
     paths: ["PCB/**/*.kicad_pcb", "PCB/**/*.kicad_sch"]
+  workflow_dispatch: {}
 permissions:
   contents: read
   pull-requests: write
