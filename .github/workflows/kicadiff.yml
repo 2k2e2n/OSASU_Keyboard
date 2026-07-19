@@ -1,6 +1,8 @@
 # .github/workflows/kicad-diff.yml
 name: KiCad visual diff
 on:
+  push:
+    paths: ["PCB/**/*.kicad_pcb", "PCB/**/*.kicad_sch"]
   pull_request:
     paths: ["PCB/**/*.kicad_pcb", "PCB/**/*.kicad_sch"]
 permissions:
