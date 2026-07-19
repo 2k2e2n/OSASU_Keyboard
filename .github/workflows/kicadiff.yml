@@ -33,15 +33,41 @@ jobs:
           OUT_DIR: ${{ steps.kicadiff.outputs.output-dir }}
         run: |
           set -eu
-          IM_CMD=magick
-          command -v magick >/dev/null 2>&1 || IM_CMD=convert
-          for dir in "$OUT_DIR/before" "$OUT_DIR/after"; do
-            [ -d "$dir" ] || continue
-            for png in "$dir"/*.png; do
-              [ -f "$png" ] || continue
-              "$IM_CMD" "$png" -fuzz 8% -fill white -opaque "#1e1e1e" "$png"
-            done
-          done
+          pip install --quiet Pillow
+
+          python3 - <<'PY'
+          import os
+          from PIL import Image
+
+          out_dir = os.environ["OUT_DIR"]
+          TARGET = (0x1e, 0x1e, 0x1e)
+          TOLERANCE = 20  # 0-255. #1e1e1e の縁のアンチエイリアスも拾う
+
+          def close(px, target, tol):
+              return all(abs(px[i] - target[i]) <= tol for i in range(3))
+
+          for side in ("before", "after"):
+              d = os.path.join(out_dir, side)
+              if not os.path.isdir(d):
+                  continue
+              for name in os.listdir(d):
+                  if not name.endswith(".png"):
+                      continue
+                  path = os.path.join(d, name)
+                  img = Image.open(path).convert("RGBA")
+                  px = img.load()
+                  w, h = img.size
+                  changed = False
+                  for y in range(h):
+                      for x in range(w):
+                          r, g, b, a = px[x, y]
+                          if a > 0 and close((r, g, b), TARGET, TOLERANCE):
+                              px[x, y] = (255, 255, 255, a)
+                              changed = True
+                  if changed:
+                      img.save(path)
+                      print(f"whitened: {path}")
+          PY
 
       # push時のみ実行。PR時はREADMEを勝手に書き換えたくないので除外。
       - name: Update README preview image
