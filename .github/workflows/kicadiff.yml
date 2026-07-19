@@ -27,6 +27,20 @@ jobs:
           pr-comment: 'true'
           pr-description: 'true'
 
+      - name: Whiten PCB image background
+        shell: bash
+        env:
+          OUT_DIR: ${{ steps.kicadiff.outputs.output-dir }}
+        run: |
+          set -eu
+          for dir in "$OUT_DIR/before" "$OUT_DIR/after"; do
+            [ -d "$dir" ] || continue
+            for png in "$dir"/*.png; do
+              [ -f "$png" ] || continue
+              magick "$png" -fuzz 8% -fill white -opaque "#1e1e1e" "$png"
+            done
+          done
+
       # push時のみ実行。PR時はREADMEを勝手に書き換えたくないので除外。
       - name: Update README preview image
         if: github.event_name != 'pull_request'
