@@ -8,3 +8,13 @@ takeishi, wataken
 
 ### Schematic
 ![Schematic](./circuit/Schematic.png "")
+
+
+<!-- kicadiff:preview:start -->
+## PCB Preview
+
+![PCB_OSASU_Keyboard.kicad_pcb.png](docs/kicad-preview/PCB_OSASU_Keyboard.kicad_pcb.png)
+
+![PCB_OSASU_Keyboard.kicad_sch.png](docs/kicad-preview/PCB_OSASU_Keyboard.kicad_sch.png)
+
+<!-- kicadiff:preview:end -->
